@@ -28,5 +28,17 @@ const collection = [
 
   const getPromotedPriceSubtotal = require('../printReceipt.js').getPromotedPriceSubtotal;
   it ('get Promoted Price Subtotal', () =>{
-      expect(getPromotedPriceSubtotal(collection)).toEqual(['3.00', '3.00', '5.50', '15.00', '2.00', '4.50']);
+      expect(getPromotedPriceSubtotal(collection)).toEqual([
+        {barcode:'ITEM000001',
+        unitPrice:'3.00',
+        Quantity:5,
+        Subtotal:'12.00'},
+        {barcode:'ITEM000003',
+        unitPrice:'15.00',
+        Quantity:1,
+        Subtotal:'15.00'},
+        {barcode:'ITEM000005',
+        unitPrice:'4.50',
+        Quantity:3,
+        Subtotal:'9.00'}]);
   })
